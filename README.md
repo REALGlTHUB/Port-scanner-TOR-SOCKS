@@ -12,16 +12,23 @@ A high-speed, asynchronous port scanner designed for privacy. It supports routin
 
 1.  **Download:** Click the green **<> Code** button and select **Download ZIP**.
 2.  **Unzip:** Extract the folder.
-3.  **Open Terminal:** Open your terminal inside that extracted folder.
-4.  **Create Virtual Environment** (Required for Debian/Ubuntu/Qubes):
-    Modern Linux systems block direct `pip` installation. Run these commands to create a safe local environment:
+3.  **Install System Dependencies (Required Step):**
+    Modern Linux systems (Debian 13, Qubes, Ubuntu 24.04+) require the `venv` package to be installed manually. Open your terminal and run:
+    ```bash
+    sudo apt update
+    sudo apt install python3-venv -y
+    ```
+    *(Enter your password if prompted).*
+
+4.  **Create Virtual Environment:**
+    Navigate to the extracted folder and run:
     ```bash
     python3 -m venv venv
     source venv/bin/activate
     ```
     *(You will see `(venv)` appear in your terminal prompt).*
 
-5.  **Install Dependencies:**
+5.  **Install Tool Dependencies:**
     Now install the required libraries inside this environment:
     ```bash
     pip install aiohttp-socks python-socks[asyncio]
@@ -30,8 +37,6 @@ A high-speed, asynchronous port scanner designed for privacy. It supports routin
 6.  **Run the Scanner:**
     ```bash
     python scanner.py --tor
-    ```
-    *(Note: Use `python` instead of `python3` once the virtual environment is active).*   
 
 ## 📖 Usage Guide
 
