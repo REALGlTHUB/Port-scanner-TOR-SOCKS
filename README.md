@@ -10,33 +10,45 @@ A high-speed, asynchronous port scanner designed for privacy. It supports routin
 
 ## 🚀 Installation & Quick Start
 
-1.  **Download:** Click the green **<> Code** button and select **Download ZIP**.
-2.  **Unzip:** Extract the folder.
-3.  **Install System Dependencies (Required Step):**
-    Modern Linux systems (Debian 13, Qubes, Ubuntu 24.04+) require the `venv` package to be installed manually. Open your terminal and run:
+### Option A: Automatic Terminal Install (Recommended)
+*This method downloads, extracts, and sets up everything in one go. No "file not found" errors.*
+
+1.  **Open Terminal** and run this single command:
+    ```bash
+    wget https://github.com/REALGlTHUB/Port-scanner-TOR-SOCKS/archive/refs/heads/main.zip -O scanner.zip && unzip scanner.zip && cd Port-scanner-TOR-SOCKS-main && rm scanner.zip
+    ```
+    *(Note: If `wget` or `unzip` is missing, install them with `sudo apt install wget unzip -y`)*
+
+2.  **Install System Dependencies** (Required for Debian 13/Qubes/Ubuntu 24.04+):
     ```bash
     sudo apt update
     sudo apt install python3-venv -y
     ```
-    *(Enter your password if prompted).*
 
-4.  **Create Virtual Environment:**
-    Navigate to the extracted folder and run:
+3.  **Create & Activate Virtual Environment**:
     ```bash
     python3 -m venv venv
     source venv/bin/activate
     ```
-    *(You will see `(venv)` appear in your terminal prompt).*
+    *(You will see `(venv)` appear in your prompt).*
 
-5.  **Install Tool Dependencies:**
-    Now install the required libraries inside this environment:
+4.  **Install Tool Dependencies**:
     ```bash
     pip install aiohttp-socks python-socks[asyncio]
     ```
 
-6.  **Run the Scanner:**
+5.  **Run the Scanner**:
     ```bash
     python scanner.py --tor
+    ```
+
+---
+
+### Option B: Manual Download (GUI)
+1.  Click the green **<> Code** button > **Download ZIP**.
+2.  **Unzip** the folder.
+3.  **Open Terminal** inside the extracted folder (Right-click > "Open Terminal Here" or `cd` into it).
+4.  Follow **Steps 2-5** from Option A above.   
 
 ## 📖 Usage Guide
 
