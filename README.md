@@ -48,7 +48,9 @@ A high-speed, asynchronous port scanner designed for privacy. It supports routin
 1.  Click the green **<> Code** button > **Download ZIP**.
 2.  **Unzip** the folder.
 3.  **Open Terminal** inside the extracted folder (Right-click > "Open Terminal Here" or `cd` into it).
-4.  Follow **Steps 2-5** from Option A above.   
+4.  Follow **Steps 2-5** from Option A above make sure if your planning on using TOR to run before. > *   **Linux (Debian/Ubuntu):** `sudo apt install tor` then `sudo systemctl start tor`
+> *   **Windows/Mac:** You must run the **Tor Browser** or **Tor Daemon** in the background before scanning.
+> *   **No Tor?** You can still use this tool with a custom SOCKS5 proxy (see Usage #3) or in direct mode (not anonymous).  
 
 ## 📖 Usage Guide
 
