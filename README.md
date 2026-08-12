@@ -10,13 +10,28 @@ A high-speed, asynchronous port scanner designed for privacy. It supports routin
 
 ## 🚀 Installation & Quick Start
 
-1.  **Download:** Click the green **<> Code** button on this page and select **Download ZIP**.
-2.  **Unzip:** Extract the folder to your desktop or documents.
-3.  **Open Terminal:** Open your command prompt/terminal inside that extracted folder.
-4.  **Install Dependencies:** Run the following command to install the required libraries:
+1.  **Download:** Click the green **<> Code** button and select **Download ZIP**.
+2.  **Unzip:** Extract the folder.
+3.  **Open Terminal:** Open your terminal inside that extracted folder.
+4.  **Create Virtual Environment** (Required for Debian/Ubuntu/Qubes):
+    Modern Linux systems block direct `pip` installation. Run these commands to create a safe local environment:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+    *(You will see `(venv)` appear in your terminal prompt).*
+
+5.  **Install Dependencies:**
+    Now install the required libraries inside this environment:
     ```bash
     pip install aiohttp-socks python-socks[asyncio]
     ```
+
+6.  **Run the Scanner:**
+    ```bash
+    python scanner.py --tor
+    ```
+    *(Note: Use `python` instead of `python3` once the virtual environment is active).*   
 
 ## 📖 Usage Guide
 
