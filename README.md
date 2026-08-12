@@ -8,9 +8,63 @@ A high-speed, asynchronous port scanner designed for privacy. It supports routin
 > *   **Windows/Mac:** You must run the **Tor Browser** or **Tor Daemon** in the background before scanning.
 > *   **No Tor?** You can still use this tool with a custom SOCKS5 proxy (see Usage #3) or in direct mode (not anonymous).
 
-## 🚀 Installation
+## 🚀 Installation & Quick Start
 
-You need Python 3.10+ and the following libraries:
+1.  **Download:** Click the green **<> Code** button on this page and select **Download ZIP**.
+2.  **Unzip:** Extract the folder to your desktop or documents.
+3.  **Open Terminal:** Open your command prompt/terminal inside that extracted folder.
+4.  **Install Dependencies:** Run the following command to install the required libraries:
+    ```bash
+    pip install aiohttp-socks python-socks[asyncio]
+    ```
 
+## 📖 Usage Guide
+
+### 1. Run with Tor (Anonymous)
+*Hides your IP. Requires Tor to be running.*
 ```bash
-pip install aiohttp-socks python-socks[asyncio]   
+python scanner.py --tor
+
+2. Change Target IP
+Scan a specific device (e.g., your router or a server).
+
+python scanner.py --tor -t 192.168.1.50
+
+3. Scan All Ports
+Scans ports 1 to 65535. Note: This is slower via Tor.
+
+python scanner.py --tor -p 1-65535
+
+4. Use Custom SOCKS5 Proxy
+If you don't have Tor but have a proxy (e.g., from a VPN).
+
+python scanner.py --proxy socks5h://127.0.0.1:9050
+
+5. Direct Scan (No Proxy)
+Fastest mode, but your IP is visible.
+
+python scanner.py
+
+⚙️ Advanced Options
+Command	Description	Example
+-t, --target	Set target IP	-t 10.0.0.5
+-p, --ports	Set port range	-p 1-65535
+--tor	Enable Tor routing	--tor
+--proxy	Custom SOCKS5 URL	--proxy socks5h://...
+--threads	Set concurrency	--threads 50
+
+Full Example: Scan all ports on 192.168.1.1 using Tor:
+
+python scanner.py --tor -t 192.168.1.1 -p 1-65535
+
+⚖️ Legal Disclaimer & Responsibility
+This tool is provided for educational and authorized security testing purposes only.
+
+Authorization: You must have explicit written permission from the owner of any network or device you scan.
+No Liability: The developers are not responsible for any misuse, damages, legal issues, or network disruptions caused by this software.
+Compliance: Users are solely responsible for complying with all applicable laws (e.g., CFAA, Computer Misuse Act).
+Usage: By using this tool, you acknowledge that you are fully responsible for your actions.
+🛡️ Privacy Features
+DNS Leak Protection: Uses socks5h to resolve domains inside the Tor network.
+No Logs: Results are printed to screen only; nothing is saved to disk.
+Stealth Mode: Randomized delays and port ordering to evade detection.
